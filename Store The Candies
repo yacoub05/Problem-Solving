@@ -1,0 +1,47 @@
+import java.io.*;                                                                                                                                                                                                                                                                                                                                        
+import java.util.*;
+
+public class Solution {
+    
+    
+    public static int storeCandies(int jars, int candies){
+        
+        int div1= jars/2;
+        
+        int div2=div1+jars%2;
+        
+        
+        int count=0;
+        
+        if(jars<=candies){
+            return 1;
+        }
+        else{
+            
+            return storeCandies(div1,candies)+storeCandies(div2,candies);
+            
+            
+        
+        }
+        
+        
+        
+
+    }
+    
+   static Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {
+        
+        
+            
+            int theJar=input.nextInt();
+            int theCandies=input.nextInt();
+        
+            System.out.println(storeCandies(theJar,theCandies));
+        
+            
+        
+       
+        
+    }
+}
