@@ -1,0 +1,56 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        String[] nd = scanner.nextLine().split(" ");
+
+          int n = Integer.parseInt(nd[0]);
+        // int n = 6;
+          int d = Integer.parseInt(nd[1]);
+       
+
+        int[] a = new int[n];
+        
+//        int d = 4;
+
+        
+        String[] aItems = scanner.nextLine().split(" ");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+       
+            d=d%n;
+        // System.out.print("d is "+ d);
+        
+        
+        for (int i = 0; i < n; i++) {
+        
+            int aItem = Integer.parseInt(aItems[i]);
+            a[i] = aItem;
+            
+              
+        }
+        
+          for(int i=d; i<n; i++){            // if d was 3 and n was 5 the mod would be 3 so i=d would be i =3 
+                                            // so it would start printing from 4 to 5 
+            System.out.print(a[i]+" ");     
+         }
+    
+        for (int i=0; i<d;i++){             //then it would restart but from index 0 which 1 to index 2 which is 3 so it                                               //would print 1 2 3
+              System.out.print(a[i]+" ");
+          }
+        
+        
+       
+        scanner.close();
+    }
+}
